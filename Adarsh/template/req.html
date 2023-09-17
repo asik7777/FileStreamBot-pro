@@ -1,252 +1,535 @@
-<!--(c) adarsh-goel-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" >
+  <head>
     <meta charset="UTF-8">
-    <meta property="og:image" content="https://i.ibb.co/M8S0Zzj/live-streaming.png" itemprop="thumbnailUrl">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>%s</title>
-    <link rel="stylesheet" type='text/css' href="https://adarsh-goel.github.io/resources/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css"/>
+    <title>TTBots</title>
+    <link rel="icon" type="image/png" href="https://graph.org/file/228a827dae72926eccd8f.jpg">
+    <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
+      html {
+        position: relative;
+        overflow-x: hidden !important;
+      }
 
-</head>
+      * {
+        box-sizing: border-box;
+      }
 
-<body>
-    <header>
-        <!-- Navbar -->
-            <nav class="navbar bg-dark p-lg-4 p-2">
-               <div class="d-flex ">
-                 <!-- Sidebar Menu -> Open Button -->
-                 <button class="btn border border-danger-subtle wow animate__animated animate__fadeInLeft animate__delay-1s" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" class="bi bi-menu-button-wide-fill" viewBox="0 0 16 16"><path fill="url(#PMWUiMSnUf2R_PPJ6rqZea_44112_gr1)" d="M1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1zm9.927.427A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0l-.396-.396zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
-                </button>
-                <!-- sidebar menu -->
-                <div class="offcanvas offcanvas-start bg-dark-subtle " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header d-block">
-                    <div class="justify-content-end align-items-end d-flex">
-                        <button type="button bg-dark " class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="d-flex ">
-                        <!-- logo -->
-                        <img src="https://i.ibb.co/37Twgkh/Logo-Lazydeveloperr.png" width="80" height="80" class="rounded" style="box-shadow: 3px 5px 11px black;" alt="">
-                        <div class="p-3">
-                            <h4 class="offcanvas-title font-semibold wow animate__animated animate__fadeInLeft " id="offcanvasWithBothOptionsLabel" style="text-shadow: 3px 5px 11px black;" >LazyDeveloperr</h4>
-                            <p class="text-red-600 font-semibold wow animate__animated animate__fadeIn animate__delay-1s animate__infinite">The one & Only</p>
-                        </div>
-                    </div>
-                    <a href="https://github.com/LazyDeveloperr" target="_blank" class="btn btn-dark w-100 text-light fw-semibold flex justify-center items-center gap-2 mt-2 wow animate__animated animate__fadeInDown  ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                          </svg>    
-                        Follow LazyDev
-                    </a>
-                    <div class="d-flex gap-1 px-1 mt-1 wow animate__animated animate__fadeInLeft animate__delay-1s ">
-                        <a href="https://teleram.me/LazyDeveloper" target="_blank" class="btn btn-secondary w-50 text-light fw-semibold flex justify-center items-center gap-2 text-xs">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
-                              </svg>
-                            Updates
-                        </a>
-                        <a href="https://github.com/LazyDeveloperr/LazyPrincess" target="_blank" class="btn btn-primary w-50 text-light  fw-semibold flex justify-center items-center gap-2 text-xs">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-git" viewBox="0 0 16 16">
-                                <path d="M15.698 7.287 8.712.302a1.03 1.03 0 0 0-1.457 0l-1.45 1.45 1.84 1.84a1.223 1.223 0 0 1 1.55 1.56l1.773 1.774a1.224 1.224 0 0 1 1.267 2.025 1.226 1.226 0 0 1-2.002-1.334L8.58 5.963v4.353a1.226 1.226 0 1 1-1.008-.036V5.887a1.226 1.226 0 0 1-.666-1.608L5.093 2.465l-4.79 4.79a1.03 1.03 0 0 0 0 1.457l6.986 6.986a1.03 1.03 0 0 0 1.457 0l6.953-6.953a1.031 1.031 0 0 0 0-1.457"/>
-                              </svg>
-                            Fork repo
-                        </a>
-                        <a href="https://youtube.com/@LazyDeveloperr" target="_blank" class="btn btn-danger w-50 text-light fw-semibold flex justify-center items-center gap-2 text-xs">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
-                              </svg>
-                            Subscribe
-                        </a>
-                    </div>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="wow animate__animated animate__fadeInLeft ">
-                        <h2 class="font-semibold" style="text-shadow: 1px 2px 8px black;">Explore</h2>
-                    </div>
-                    <div class=" d-block px-5 wow animate__animated animate__fadeInRight ">
-                        <a href="https://telegram.me/real_moviesadda2" type="button" class="btn btn-outline-secondary w-100 mt-1 wow animate__animated animate__fadeIn ">Trending Movies</a>
-                        <a href="https://telegram.me/real_moviesadda2" type="button" class="btn btn-outline-secondary w-100 mt-1">Newly Released Movies</a>
-                        <a href="https://telegram.me/real_moviesadda2" type="button" class="btn btn-outline-secondary w-100 mt-1">Popular on MoviesAdda</a>
-                        <a href="https://telegram.me/real_moviesadda2" type="button" class="btn btn-outline-secondary w-100 mt-1">Bollywood Movies</a>
-                        <a href="https://telegram.me/real_moviesadda2" type="button" class="btn btn-outline-secondary w-100 mt-1">Hollwood Movies</a>
-                        <a href="https://telegram.me/real_moviesadda2" type="button" class="btn btn-outline-secondary w-100 mt-1">webseries</a>
-                    </div>
-                    
-                <!-- section -->
-                <div class="m-2 mt-4">
-                    <p>
-                        <a class="btn btn-primary w-100 flex justify-center items-center gap-2" data-bs-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-heart" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.133l.941.502A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765L2 3.133V2Zm0 2.267-.47.25A1 1 0 0 0 1 5.4v.817l1 .6v-2.55Zm1 3.15 3.75 2.25L8 8.917l1.25.75L13 7.417V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v5.417Zm11-.6 1-.6V5.4a1 1 0 0 0-.53-.882L14 4.267v2.55ZM8 2.982C9.664 1.309 13.825 4.236 8 8 2.175 4.236 6.336 1.31 8 2.982Zm7 4.401-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734Z"/>
-                              </svg>
-                            <span class="ps-2">watch Deploy tutorial</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
-                              </svg>
-                        </a>
-                    </p>
-                </div>
-                  
-                    <!-- footer of sidebar -->
-                    
-                    <div class="text-center w-100">
-                        <div class="mt-3">
-                            <h5 class="flex justify-center items-center gap-2">
-                                <span class="text-dark font-monospace" style="text-shadow: 3px 5px 11px rgb(126, 10, 80);">With Love</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-chat-heart" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" fill="#dc0303" d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2Zm-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125ZM8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
-                                  </svg>
-                            </h5>
-                        </div>
-                        <div class="text-center w-100 px-2 flex justify-center items-center gap-2">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle " viewBox="0 0 16 16"><path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/></svg></span>
-                            <span class="font-bold bg-clip-text text-[18px] text-transparent bg-gradient-to-r from-yellow-400  via-orange-700 to-red-700" style="text-shadow: 3px 5px 11px black;">LazyDeveloperr</span>
-                        </div>
-                    </div>
+      body {
+        font-family: "Quicksand", sans-serif;
+        color: #324e63;
+      }
 
-                    <!-- <p>Try scrolling the rest of the page to see this option in action.</p> -->
-                </div>
-                </div>
+      a, a:hover {
+        text-decoration: none;
+      }
 
-                <!-- web title -->
-                <div class="container-fluid">
-                    <a class="navbar-brand  text-light fw-bold " href="https://telegram.me/real_MoviesAdda2">
-                        <span class="bg-clip-text sm:text-[25px] text-[22px] text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-                            Movies Adda
-                          </span>
-                    </a>
-                  </div>
-               </div>
-            </nav>
-            <!-- ./Navbar -->
-    </header>
-    <div class="container">
-        <tag src="%s" class="player"></tag>
-    </div>
-    
-    <footer class="bg-dark justify-content-around align-items-center">
-            <div class="container-fluid  justify-content-center align-itemsd x. -center">
-                <!-- Section: Social media -->
-                <section class="lg:p-4 p-2 justify-content-center align-items-center text-center ">  
-                    <!-- YouTube -->
-                    <a class="btn btn-outline-light btn-floating m-1 rounded-circle p-2 border-secondary wow animate__animated animate__fadeInLeft hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-200" href="https://youtube.com/@LazyDeveloperr" target="_blank" role="button">
-                         <svg class="wow animate__animated animate__heartBeat animate__delay-1s animate__infinite" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 64 64">
-                            <linearGradient id="PMWUiMSnUf2R_PPJ6rqZea_44112_gr1" x1="32" x2="32" y1="10" y2="54.751" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#PMWUiMSnUf2R_PPJ6rqZea_44112_gr1)" d="M32,53.001c-6.358,0-12.716-0.195-19.299-0.584c-4.96-0.293-8.961-4.242-9.308-9.187 c-0.521-7.452-0.521-15.009-0.001-22.46c0.348-4.945,4.349-8.895,9.309-9.188c13.167-0.778,25.433-0.778,38.598,0 c4.96,0.293,8.961,4.242,9.308,9.187c0.521,7.452,0.521,15.009,0.001,22.46c-0.348,4.945-4.349,8.895-9.309,9.188l0,0 C44.716,52.806,38.358,53.001,32,53.001z M51.182,50.421l0.059,0.998L51.182,50.421c3.959-0.234,7.153-3.386,7.431-7.331 c0.515-7.358,0.515-14.821-0.001-22.181c-0.276-3.944-3.471-7.096-7.43-7.33c-13.088-0.773-25.275-0.773-38.363,0 c-3.959,0.234-7.153,3.386-7.431,7.331c-0.515,7.358-0.515,14.821,0.001,22.181c0.276,3.944,3.471,7.096,7.43,7.33 C25.906,51.194,38.094,51.194,51.182,50.421z"></path><linearGradient id="PMWUiMSnUf2R_PPJ6rqZeb_44112_gr2" x1="31.72" x2="31.72" y1="24.25" y2="39.252" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#PMWUiMSnUf2R_PPJ6rqZeb_44112_gr2)" d="M25 39.84L25 24.16 38.44 32z"></path><linearGradient id="PMWUiMSnUf2R_PPJ6rqZec_44112_gr3" x1="32.212" x2="32.212" y1="10" y2="54.751" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#PMWUiMSnUf2R_PPJ6rqZec_44112_gr3)" d="M24,41.581V22.419L40.425,32L24,41.581z M26,25.901v12.197L36.456,32L26,25.901z"></path>
-                        </svg>
-                    </a>
-              
-                    <!-- Telegram -->
-                    <a class="btn btn-outline-light btn-floating m-1 rounded-circle p-2 border-secondary wow animate__animated animate__fadeInDown animate__delay-1s hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-200" href="https://telegram.me/LazyDeveloper" target="_blank" role="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
-                        <path fill="url(#PMWUiMSnUf2R_PPJ6rqZea_44112_gr1)" d="M25,2c12.703,0,23,10.297,23,23S37.703,48,25,48S2,37.703,2,25S12.297,2,25,2z M32.934,34.375	c0.423-1.298,2.405-14.234,2.65-16.783c0.074-0.772-0.17-1.285-0.648-1.514c-0.578-0.278-1.434-0.139-2.427,0.219	c-1.362,0.491-18.774,7.884-19.78,8.312c-0.954,0.405-1.856,0.847-1.856,1.487c0,0.45,0.267,0.703,1.003,0.966	c0.766,0.273,2.695,0.858,3.834,1.172c1.097,0.303,2.346,0.04,3.046-0.395c0.742-0.461,9.305-6.191,9.92-6.693	c0.614-0.502,1.104,0.141,0.602,0.644c-0.502,0.502-6.38,6.207-7.155,6.997c-0.941,0.959-0.273,1.953,0.358,2.351	c0.721,0.454,5.906,3.932,6.687,4.49c0.781,0.558,1.573,0.811,2.298,0.811C32.191,36.439,32.573,35.484,32.934,34.375z"></path>
-                    </svg>
-                    </a>
-              
-                    <!-- Instagram -->
-                    <a class="btn btn-outline-light btn-floating m-1 rounded-circle p-2 border-secondary wow animate__animated animate__fadeInUp animate__delay-2s hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300" href="https://instagram.com/LazyDeveloperr" target="_blank" role="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
-                        <path fill="url(#PMWUiMSnUf2R_PPJ6rqZea_44112_gr1)" d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"></path>
-                        </svg>
-                    </a>
-              
-                    <!-- Linkedin -->
-                    <a class="btn btn-outline-light btn-floating m-1 rounded-circle p-2 border-secondary wow animate__animated animate__fadeInDown animate__delay-1s hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300" href="https://linkedin.com/in/lazydeveloperr" target="_blank" role="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30">
-                        <path fill="url(#PMWUiMSnUf2R_PPJ6rqZea_44112_gr1)" d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
-                    </svg>
-                    </a>
-              
-                    <!-- Github -->
-                    <a class="btn btn-outline-light btn-floating m-1 rounded-circle p-2 border-secondary wow animate__animated animate__fadeInUp animate__delay-2s hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300" href="https://github.com/LazyDeveloperr" target="_blank" role="button">
-                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30">
-                        <path  fill="url(#PMWUiMSnUf2R_PPJ6rqZea_44112_gr1)" d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
-                    </svg>
-                    </a>
-                  </section>
+      .icon {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        stroke-width: 0;
+        stroke: currentColor;
+        fill: currentColor;
+      }
 
-                  <!-- For LazyDeveloper // credit --- Please don't remove footer credit -->
-                  <div class="row flex-row-reverse text-secondary justify-content-center align-items-center">
-                      <div class="col-lg-6 col-12 justify-content-center align-items-center text-center p-1 wow animate__animated animate__fadeInRight">
-                        <ul class="navbar-nav">
-                            <li class="navbar-item bg-gradient-to-r from-pink-500 rounded-xl p-2"> <h5 class="text-gray-100 font-semibold text-sm"> Think & just code it... </h5><sup class="badge badge-error text-xs text-gray-300 font-monospace">-LazyDeveloperr</sup> </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-12 justify-content-center align-items-center text-center p-1 wow animate__animated animate__fadeInLeft">
-                        <ul class="navbar-nav">
-                            <li class="navbar-item bg-gradient-to-l from-pink-500 rounded-xl p-2 "> <h5 class="text-gray-100 font-semibold text-sm" > Success is the journey of millions of failure and lots of hard work </h5> <sup class="badge  text-xs text-gray-300 font-monospace">-LazyDeveloperr</sup> </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-4 justify-content-center align-items-center text-center mt-lg-0 mt-5  pt-lg-0 pt-4 wow animate__animated animate__fadeInUp">
-                        <ul class="navbar-nav ">
-                            <li class="nav-item justify-center items-center flex"  style="margin-top: -40px;">
-                                <img src="https://i.ibb.co/37Twgkh/Logo-Lazydeveloperr.png" height="140px" class="rounded-3 " alt="logo">
-                            </li>
-                            <!-- <li class="nav-item justify-center items-center text-center">
-                                <a  class="nav-link h1 text-center sm:-m-1 -ms-4"><h5><a class="font-bold" href="https://telegram.me/real_MoviesAdda2" target="_blank">MoviesAdda : </a>Run and managed by <a href="https://telegram.me/Aadil_h" target="_blank" class="bg-clip-text text-[16px] text-transparent bg-gradient-to-r from-orange-500 to-pink-500">Adil</a> & <a href="https://telegram.me/LazyDeveloperr" target="_blank">Indu(<a href="https://telegram.me/LazyDeveloperr" target="_blank" class="bg-clip-text text-[16px] text-transparent bg-gradient-to-r from-orange-500 to-pink-500">LazyDeveloper</a>)</a> </h5></a>
-                            </li> -->
-                        </ul>
-                    </div>
-                    
-                    <!-- Copyright -->
-                </div> 
-                <div class=" justify-center items-center text-center w-full text-center flex ">
-                    <div  class="text-gray-400 text-center sm:-m-1 -ms-4 m-2 p-2">
-                        <h5>
-                            <a class="font-bold" href="https://telegram.me/real_MoviesAdda2" target="_blank">MoviesAdda : </a>Run and managed by <a href="https://telegram.me/Aadil_h" target="_blank" class="bg-clip-text text-[16px] text-transparent bg-gradient-to-r from-orange-500 to-pink-500">Adil</a> & <a href="https://telegram.me/LazyDeveloperr" target="_blank">Indu(<a href="https://telegram.me/LazyDeveloperr" target="_blank" class="bg-clip-text text-[16px] text-transparent bg-gradient-to-r from-orange-500 to-pink-500">LazyDeveloper</a>)
-                            </a> 
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center text-xs p-3 dark:text-light text-light gap-2" style="background-color: rgba(0, 0, 0, 0.2);">
-                <!-- For LazyDeveloper // credit --- Please don't remove footer credit -->
-            ©  <script type="text/JavaScript">
-                var theDate=new Date() 
-                    document.write(theDate.getFullYear()) 
-            </script> Copyright :
-                <a class="bg-clip-text text-[16px] text-transparent bg-gradient-to-r from-pink-500 to-violet-500 font-bold tracking-wide px-1" href="https://telegram.me/LazyDeveloperr">LazyDeveloperr</a>
-                <!--🥰  Thank you for giving me credit @LazyDeveloperr  🥰 -->
-                All right reserved
-            </div>   
-        </footer>
-    
-    
-    <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
-	<script>
-        const controls = [
-              'play-large',
-              'rewind',
-              'play', 
-              'fast-forward', 
-              'progress', 
-              'current-time',
-              'duration',
-              'mute',
-              'volume',
-              'captions',
-              'settings',
-              'pip',
-              'airplay',
-              'download',
-              'fullscreen'
-            ];
-        document.addEventListener('DOMContentLoaded', () => {
-            const player = Plyr.setup('.player', { controls });
-        });
-
-        const body = document.querySelector('body');
-        const footer = document.querySelector('footer');
-        const toogle = document.querySelector('.toogle');
-        toogle.onclick = () => {
-            body.classList.toggle('dark')
-            footer.classList.toggle('dark')
+      .wrapper {
+        width: 100%;
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        padding: 50px 20px;
+        padding-top: 100px;
+        display: flex;
+        background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
+        display: flex;
+        background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
+      }
+      @media screen and (max-width: 768px) {
+        .wrapper {
+          height: auto;
+          min-height: 100vh;
+          padding-top: 100px;
         }
+      }
+
+      .profile-card {
+        width: 100%;
+        min-height: 460px;
+        margin: auto;
+        box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6);
+        background: #fff;
+        border-radius: 12px;
+        max-width: 700px;
+        position: relative;
+      }
+      .profile-card.active .profile-card__cnt {
+        filter: blur(6px);
+      }
+      .profile-card.active .profile-card-message,
+      .profile-card.active .profile-card__overlay {
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 0.1s;
+      }
+      .profile-card.active .profile-card-form {
+        transform: none;
+        transition-delay: 0.1s;
+      }
+      .profile-card__img {
+        width: 150px;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        z-index: 4;
+        box-shadow: 0px 5px 50px 0px #6c44fc, 0px 0px 0px 7px rgba(107, 74, 255, 0.5);
+      }
+      @media screen and (max-width: 576px) {
+        .profile-card__img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+      .profile-card__img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .profile-card__cnt {
+        margin-top: -35px;
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 40px;
+        transition: all 0.3s;
+      }
+      .profile-card__name {
+        font-weight: 700;
+        font-size: 24px;
+        color: #2f03de;
+        margin-bottom: 15px;
+      }
+      .profile-card__txt {
+        font-size: 18px;
+        font-weight: 500;
+        color: #324e63;
+        margin-top: 30px;
+        margin-bottom: 15px;
+      }
+      .profile-card__txt strong {
+        font-weight: 700;
+      }
+      .profile-card-loc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .profile-card-loc__icon {
+        display: inline-flex;
+        font-size: 27px;
+        margin-right: 10px;
+      }
+      .profile-card-inf {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-top: 35px;
+      }
+      .profile-card-inf__item {
+        padding: 10px 35px;
+        min-width: 150px;
+      }
+      @media screen and (max-width: 768px) {
+        .profile-card-inf__item {
+          padding: 10px 20px;
+          min-width: 120px;
+        }
+      }
+      .profile-card-inf__title {
+        font-weight: 700;
+        font-size: 27px;
+        color: #324e63;
+      }
+      .profile-card-inf__txt {
+        font-weight: 500;
+        margin-top: 7px;
+      }
+      .profile-card-social {
+        margin-top: 25px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .profile-card-social__item {
+        display: inline-flex;
+        width: 55px;
+        height: 55px;
+        margin: 15px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background: #405de6;
+        box-shadow: 0px 7px 30px rgba(43, 98, 169, 0.5);
+        position: relative;
+        font-size: 21px;
+        flex-shrink: 0;
+        transition: all 0.3s;
+      }
+      @media screen and (max-width: 768px) {
+        .profile-card-social__item {
+          width: 50px;
+          height: 50px;
+          margin: 10px;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .profile-card-social__item:hover {
+          transform: scale(1.2);
+        }
+      }
+      .profile-card-social__item.twitter {
+        background: linear-gradient(45deg, #1da1f2, #0e71c8);
+        box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.7);
+      }
+      .profile-card-social__item.instagram {
+        background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        box-shadow: 0px 4px 30px rgba(120, 64, 190, 0.6);
+      }
+      .profile-card-social__item.telegram {
+        background: linear-gradient(45deg, #1769ff, #213fca);
+        box-shadow: 0px 4px 30px rgba(27, 86, 231, 0.7);
+      }
+      .profile-card-social__item.github {
+        background: linear-gradient(45deg, #333333, #626b73);
+        box-shadow: 0px 4px 30px rgba(63, 65, 67, 0.6);
+      }
+      .profile-card-social__item.codepen {
+        background: linear-gradient(45deg, #324e63, #414447);
+        box-shadow: 0px 4px 30px rgba(55, 75, 90, 0.6);
+      }
+      .profile-card-social__item.link {
+        background: linear-gradient(45deg, #d5135a, #f05924);
+        box-shadow: 0px 4px 30px rgba(223, 45, 70, 0.6);
+      }
+      .profile-card-social .icon-font {
+        display: inline-flex;
+      }
+      .profile-card-ctr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+      }
+      @media screen and (max-width: 576px) {
+        .profile-card-ctr {
+          flex-wrap: wrap;
+        }
+      }
+      .profile-card__button {
+        background: none;
+        border: none;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        font-size: 19px;
+        margin: 15px 35px;
+        padding: 15px 40px;
+        min-width: 201px;
+        border-radius: 50px;
+        min-height: 55px;
+        color: #fff;
+        cursor: pointer;
+        backface-visibility: hidden;
+        transition: all 0.3s;
+      }
+      @media screen and (max-width: 768px) {
+        .profile-card__button {
+          min-width: 170px;
+          margin: 15px 25px;
+        }
+      }
+      @media screen and (max-width: 576px) {
+        .profile-card__button {
+          min-width: inherit;
+          margin: 0;
+          margin-bottom: 16px;
+          width: 100%;
+          max-width: 300px;
+        }
+        .profile-card__button:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .profile-card__button:focus {
+        outline: none !important;
+      }
+      @media screen and (min-width: 768px) {
+        .profile-card__button:hover {
+          transform: translateY(-5px);
+        }
+      }
+      .profile-card__button:first-child {
+        margin-left: 0;
+      }
+      .profile-card__button:last-child {
+        margin-right: 0;
+      }
+      .profile-card__button.button--blue {
+        background: linear-gradient(45deg, #1da1f2, #0e71c8);
+        box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.4);
+      }
+      .profile-card__button.button--blue:hover {
+        box-shadow: 0px 7px 30px rgba(19, 127, 212, 0.75);
+      }
+      .profile-card__button.button--orange {
+        background: linear-gradient(45deg, #d5135a, #f05924);
+        box-shadow: 0px 4px 30px rgba(223, 45, 70, 0.35);
+      }
+      .profile-card__button.button--orange:hover {
+        box-shadow: 0px 7px 30px rgba(223, 45, 70, 0.75);
+      }
+      .profile-card__button.button--gray {
+        box-shadow: none;
+        background: #dcdcdc;
+        color: #142029;
+      }
+      .profile-card-message {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 130px;
+        padding-bottom: 100px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+      }
+      .profile-card-form {
+        box-shadow: 0 4px 30px rgba(15, 22, 56, 0.35);
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        background: #fff;
+        border-radius: 10px;
+        padding: 35px;
+        transform: scale(0.8);
+        position: relative;
+        z-index: 3;
+        transition: all 0.3s;
+      }
+      @media screen and (max-width: 768px) {
+        .profile-card-form {
+          max-width: 90%;
+          height: auto;
+        }
+      }
+      @media screen and (max-width: 576px) {
+        .profile-card-form {
+          padding: 20px;
+        }
+      }
+      .profile-card-form__bottom {
+        justify-content: space-between;
+        display: flex;
+      }
+      @media screen and (max-width: 576px) {
+        .profile-card-form__bottom {
+          flex-wrap: wrap;
+        }
+      }
+      .profile-card textarea {
+        width: 100%;
+        resize: none;
+        height: 210px;
+        margin-bottom: 20px;
+        border: 2px solid #dcdcdc;
+        border-radius: 10px;
+        padding: 15px 20px;
+        color: #324e63;
+        font-weight: 500;
+        font-family: "Quicksand", sans-serif;
+        outline: none;
+        transition: all 0.3s;
+      }
+      .profile-card textarea:focus {
+        outline: none;
+        border-color: #8a979e;
+      }
+      .profile-card__overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        opacity: 0;
+        background: rgba(22, 33, 72, 0.35);
+        border-radius: 12px;
+        transition: all 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="wrapper">
+      <div class="profile-card js-profile-card">
+        <div class="profile-card__img">
+          <img src="https://graph.org/file/228a827dae72926eccd8f.jpg" alt="profile card">
+        </div>
+        <div class="profile-card__cnt js-profile-cnt">
+          <div class="profile-card__name"><b>(TeamHMT)<i> TT Bots </i></b></div>
+          <div class="profile-card__txt">This is the home of page of File Stream link</div>
+          <div class="profile-card__txt">Get All Movies to Watch Online/Download</div>
+          <!-- <div class="profile-card-loc">
+            <span class="profile-card-loc__icon">
+              <svg class="icon">
+                <use xlink:href="#icon-location"></use>
+              </svg>
+            </span>
+            <span class="profile-card-loc__txt">
+            Odisha, India
+            </span>
+          </div> -->
+          <div class="profile-card-social">
+            <!-- <a href="https://www.instagram.com/anshuman_p_m/" class="profile-card-social__item instagram" target="_blank">
+              <span class="icon-font">
+                <svg class="icon">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+              </span>
+            </a> -->
+            <!-- <a href="https://twitter.com/Anshuman_P_M" class="profile-card-social__item twitter" target="_blank">
+              <span class="icon-font">
+                <svg class="icon">
+                  <use xlink:href="#icon-twitter"></use>
+                </svg>
+              </span>
+            </a> -->
+            <h2> Bot Channel - </h2>
+            <a href="https://telegram.me/TTBots" class="profile-card-social__item telegram" target="_blank">
+              <span class="icon-font">
+                <svg class="icon">
+                  <use xlink:href="#icon-telegram"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="profile-card-social">
+            <h2> Github Link - </h2>
+            <a href="https://github.com/TeamHMT" class="profile-card-social__item github" target="_blank">
+              <span class="icon-font">
+                <svg class="icon">
+                  <use xlink:href="#icon-github"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="profile-card-social">
+            <h2> Movie Channel - </h2>
+            <a href="https://telegram.me/TeamHMT" class="profile-card-social__item link" target="_blank">
+              <span class="icon-font">
+                <svg class="icon">
+                  <use xlink:href="#icon-link"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="profile-card-message js-message">
+          <form class="profile-card-form">
+            <div class="profile-card-form__container">
+              <textarea placeholder="Say something..."></textarea>
+            </div>
+            <div class="profile-card-form__bottom">
+              <button class="profile-card__button button--blue js-message-close">
+              Send
+              </button>
+              <button class="profile-card__button button--gray js-message-close">
+              Cancel
+              </button>
+            </div>
+          </form>
+          <div class="profile-card__overlay js-message-close"></div>
+        </div>
+      </div>
+    </div>
+    <svg hidden="hidden">
+      <defs>
+        <symbol id="icon-codepen" viewBox="0 0 32 32">
+          <title>codepen</title>
+          <path d="M31.872 10.912v-0.032c0-0.064 0-0.064 0-0.096v-0.064c0-0.064 0-0.064-0.064-0.096 0 0 0-0.064-0.064-0.064 0-0.064-0.064-0.064-0.064-0.096 0 0 0-0.064-0.064-0.064 0-0.064-0.064-0.064-0.064-0.096l-0.192-0.192v-0.064l-0.064-0.064-14.592-9.696c-0.448-0.32-1.056-0.32-1.536 0l-14.528 9.696-0.32 0.32c0 0-0.064 0.064-0.064 0.096 0 0 0 0.064-0.064 0.064 0 0.064-0.064 0.064-0.064 0.096 0 0 0 0.064-0.064 0.064 0 0.064 0 0.064-0.064 0.096v0.064c0 0.064 0 0.064 0 0.096v0.064c0 0.064 0 0.096 0 0.16v9.696c0 0.064 0 0.096 0 0.16v0.064c0 0.064 0 0.064 0 0.096v0.064c0 0.064 0 0.064 0.064 0.096 0 0 0 0.064 0.064 0.064 0 0.064 0.064 0.064 0.064 0.096 0 0 0 0.064 0.064 0.064 0 0.064 0.064 0.064 0.064 0.096l0.256 0.256 0.064 0.032 14.528 9.728c0.224 0.16 0.48 0.224 0.768 0.224s0.544-0.064 0.768-0.224l14.528-9.728 0.32-0.32c0 0 0.064-0.064 0.064-0.096 0 0 0-0.064 0.064-0.064 0-0.064 0.064-0.064 0.064-0.096 0 0 0-0.064 0.064-0.064 0-0.064 0-0.064 0.064-0.096v-0.032c0-0.064 0-0.064 0-0.096v-0.064c0-0.064 0-0.096 0-0.16v-9.664c0-0.064 0-0.096 0-0.224zM17.312 4l10.688 7.136-4.768 3.168-5.92-3.936v-6.368zM14.56 4v6.368l-5.92 3.968-4.768-3.168 10.688-7.168zM2.784 13.664l3.392 2.304-3.392 2.304c0 0 0-4.608 0-4.608zM14.56 28l-10.688-7.136 4.768-3.2 5.92 3.936v6.4zM15.936 19.2l-4.832-3.232 4.832-3.232 4.832 3.232-4.832 3.232zM17.312 28v-6.432l5.92-3.936 4.8 3.168-10.72 7.2zM29.12 18.272l-3.392-2.304 3.392-2.304v4.608z"></path>
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 32 32">
+          <title>github</title>
+          <path d="M16.192 0.512c-8.832 0-16 7.168-16 16 0 7.072 4.576 13.056 10.944 15.168 0.8 0.16 1.088-0.352 1.088-0.768 0-0.384 0-1.632-0.032-2.976-4.448 0.96-5.376-1.888-5.376-1.888-0.736-1.856-1.792-2.336-1.792-2.336-1.44-0.992 0.096-0.96 0.096-0.96 1.6 0.128 2.464 1.664 2.464 1.664 1.44 2.432 3.744 1.728 4.672 1.344 0.128-1.024 0.544-1.728 1.024-2.144-3.552-0.448-7.296-1.824-7.296-7.936 0-1.76 0.64-3.168 1.664-4.288-0.16-0.416-0.704-2.016 0.16-4.224 0 0 1.344-0.416 4.416 1.632 1.28-0.352 2.656-0.544 4-0.544s2.72 0.192 4 0.544c3.040-2.080 4.384-1.632 4.384-1.632 0.864 2.208 0.32 3.84 0.16 4.224 1.024 1.12 1.632 2.56 1.632 4.288 0 6.144-3.744 7.488-7.296 7.904 0.576 0.512 1.088 1.472 1.088 2.976 0 2.144-0.032 3.872-0.032 4.384 0 0.416 0.288 0.928 1.088 0.768 6.368-2.112 10.944-8.128 10.944-15.168 0-8.896-7.168-16.032-16-16.032z"></path>
+          <path d="M6.24 23.488c-0.032 0.064-0.16 0.096-0.288 0.064-0.128-0.064-0.192-0.16-0.128-0.256 0.032-0.096 0.16-0.096 0.288-0.064 0.128 0.064 0.192 0.16 0.128 0.256v0z"></path>
+          <path d="M6.912 24.192c-0.064 0.064-0.224 0.032-0.32-0.064s-0.128-0.256-0.032-0.32c0.064-0.064 0.224-0.032 0.32 0.064s0.096 0.256 0.032 0.32v0z"></path>
+          <path d="M7.52 25.12c-0.096 0.064-0.256 0-0.352-0.128s-0.096-0.32 0-0.384c0.096-0.064 0.256 0 0.352 0.128 0.128 0.128 0.128 0.32 0 0.384v0z"></path>
+          <path d="M8.384 26.016c-0.096 0.096-0.288 0.064-0.416-0.064s-0.192-0.32-0.096-0.416c0.096-0.096 0.288-0.064 0.416 0.064 0.16 0.128 0.192 0.32 0.096 0.416v0z"></path>
+          <path d="M9.6 26.528c-0.032 0.128-0.224 0.192-0.384 0.128-0.192-0.064-0.288-0.192-0.256-0.32s0.224-0.192 0.416-0.128c0.128 0.032 0.256 0.192 0.224 0.32v0z"></path>
+          <path d="M10.912 26.624c0 0.128-0.16 0.256-0.352 0.256s-0.352-0.096-0.352-0.224c0-0.128 0.16-0.256 0.352-0.256 0.192-0.032 0.352 0.096 0.352 0.224v0z"></path>
+          <path d="M12.128 26.4c0.032 0.128-0.096 0.256-0.288 0.288s-0.352-0.032-0.384-0.16c-0.032-0.128 0.096-0.256 0.288-0.288s0.352 0.032 0.384 0.16v0z"></path>
+        </symbol>
+        <symbol id="icon-location" viewBox="0 0 32 32">
+          <title>location</title>
+          <path d="M16 31.68c-0.352 0-0.672-0.064-1.024-0.16-0.8-0.256-1.44-0.832-1.824-1.6l-6.784-13.632c-1.664-3.36-1.568-7.328 0.32-10.592 1.856-3.2 4.992-5.152 8.608-5.376h1.376c3.648 0.224 6.752 2.176 8.608 5.376 1.888 3.264 2.016 7.232 0.352 10.592l-6.816 13.664c-0.288 0.608-0.8 1.12-1.408 1.408-0.448 0.224-0.928 0.32-1.408 0.32zM15.392 2.368c-2.88 0.192-5.408 1.76-6.912 4.352-1.536 2.688-1.632 5.92-0.288 8.672l6.816 13.632c0.128 0.256 0.352 0.448 0.64 0.544s0.576 0.064 0.832-0.064c0.224-0.096 0.384-0.288 0.48-0.48l6.816-13.664c1.376-2.752 1.248-5.984-0.288-8.672-1.472-2.56-4-4.128-6.88-4.32h-1.216zM16 17.888c-3.264 0-5.92-2.656-5.92-5.92 0-3.232 2.656-5.888 5.92-5.888s5.92 2.656 5.92 5.92c0 3.264-2.656 5.888-5.92 5.888zM16 8.128c-2.144 0-3.872 1.728-3.872 3.872s1.728 3.872 3.872 3.872 3.872-1.728 3.872-3.872c0-2.144-1.76-3.872-3.872-3.872z"></path>
+          <path d="M16 32c-0.384 0-0.736-0.064-1.12-0.192-0.864-0.288-1.568-0.928-1.984-1.728l-6.784-13.664c-1.728-3.456-1.6-7.52 0.352-10.912 1.888-3.264 5.088-5.28 8.832-5.504h1.376c3.744 0.224 6.976 2.24 8.864 5.536 1.952 3.36 2.080 7.424 0.352 10.912l-6.784 13.632c-0.32 0.672-0.896 1.216-1.568 1.568-0.48 0.224-0.992 0.352-1.536 0.352zM15.36 0.64h-0.064c-3.488 0.224-6.56 2.112-8.32 5.216-1.824 3.168-1.952 7.040-0.32 10.304l6.816 13.632c0.32 0.672 0.928 1.184 1.632 1.44s1.472 0.192 2.176-0.16c0.544-0.288 1.024-0.736 1.28-1.28l6.816-13.632c1.632-3.264 1.504-7.136-0.32-10.304-1.824-3.104-4.864-5.024-8.384-5.216h-1.312zM16 29.952c-0.16 0-0.32-0.032-0.448-0.064-0.352-0.128-0.64-0.384-0.8-0.704l-6.816-13.664c-1.408-2.848-1.312-6.176 0.288-8.96 1.536-2.656 4.16-4.32 7.168-4.512h1.216c3.040 0.192 5.632 1.824 7.2 4.512 1.6 2.752 1.696 6.112 0.288 8.96l-6.848 13.632c-0.128 0.288-0.352 0.512-0.64 0.64-0.192 0.096-0.384 0.16-0.608 0.16zM15.424 2.688c-2.784 0.192-5.216 1.696-6.656 4.192-1.504 2.592-1.6 5.696-0.256 8.352l6.816 13.632c0.096 0.192 0.256 0.32 0.448 0.384s0.416 0.064 0.608-0.032c0.16-0.064 0.288-0.192 0.352-0.352l6.816-13.664c1.312-2.656 1.216-5.792-0.288-8.352-1.472-2.464-3.904-4-6.688-4.16h-1.152zM16 18.208c-3.424 0-6.24-2.784-6.24-6.24 0-3.424 2.816-6.208 6.24-6.208s6.24 2.784 6.24 6.24c0 3.424-2.816 6.208-6.24 6.208zM16 6.4c-3.072 0-5.6 2.496-5.6 5.6 0 3.072 2.528 5.6 5.6 5.6s5.6-2.496 5.6-5.6c0-3.104-2.528-5.6-5.6-5.6zM16 16.16c-2.304 0-4.16-1.888-4.16-4.16s1.888-4.16 4.16-4.16c2.304 0 4.16 1.888 4.16 4.16s-1.856 4.16-4.16 4.16zM16 8.448c-1.952 0-3.552 1.6-3.552 3.552s1.6 3.552 3.552 3.552c1.952 0 3.552-1.6 3.552-3.552s-1.6-3.552-3.552-3.552z"></path>
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 32 32">
+          <title>instagram</title>
+          <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
+          <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
+          <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
+        </symbol>
+        <symbol id="icon-twitter" viewBox="0 0 32 32">
+          <title>twitter</title>
+          <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
+        </symbol>
+        <symbol id="icon-telegram" viewBox="0 0 32 32">
+          <title>telegram</title>
+          <path d="M30.8,2.2L0.6,13.9c-0.8,0.3-0.7,1.3,0,1.6l7.4,2.8l2.9,9.2c0.2,0.6,0.9,0.8,1.4,0.4l4.1-3.4 c0.4-0.4,1-0.4,1.5,0l7.4,5.4c0.5,0.4,1.2,0.1,1.4-0.5L32,3.2C32.1,2.5,31.4,1.9,30.8,2.2z M25,8.3l-11.9,11 c-0.4,0.4-0.7,0.9-0.8,1.5l-0.4,3c-0.1,0.4-0.6,0.4-0.7,0.1l-1.6-5.5c-0.2-0.6,0.1-1.3,0.6-1.6l14.4-8.9C25,7.7,25.3,8.1,25,8.3z" />
+        </symbol>
+        <symbol id="icon-link" viewBox="0 0 32 32">
+          <title>link</title>
+          <path d="M17.984 11.456c-0.704 0.704-0.704 1.856 0 2.56 2.112 2.112 2.112 5.568 0 7.68l-5.12 5.12c-2.048 2.048-5.632 2.048-7.68 0-1.024-1.024-1.6-2.4-1.6-3.84s0.576-2.816 1.6-3.84c0.704-0.704 0.704-1.856 0-2.56s-1.856-0.704-2.56 0c-1.696 1.696-2.624 3.968-2.624 6.368 0 2.432 0.928 4.672 2.656 6.4 1.696 1.696 3.968 2.656 6.4 2.656s4.672-0.928 6.4-2.656l5.12-5.12c3.52-3.52 3.52-9.248 0-12.8-0.736-0.672-1.888-0.672-2.592 0.032z"></path>
+          <path d="M29.344 2.656c-1.696-1.728-3.968-2.656-6.4-2.656s-4.672 0.928-6.4 2.656l-5.12 5.12c-3.52 3.52-3.52 9.248 0 12.8 0.352 0.352 0.8 0.544 1.28 0.544s0.928-0.192 1.28-0.544c0.704-0.704 0.704-1.856 0-2.56-2.112-2.112-2.112-5.568 0-7.68l5.12-5.12c2.048-2.048 5.632-2.048 7.68 0 1.024 1.024 1.6 2.4 1.6 3.84s-0.576 2.816-1.6 3.84c-0.704 0.704-0.704 1.856 0 2.56s1.856 0.704 2.56 0c1.696-1.696 2.656-3.968 2.656-6.4s-0.928-4.704-2.656-6.4z"></path>
+        </symbol>
+      </defs>
+    </svg>
+    <!-- partial -->
+    <script>
+      var messageBox = document.querySelector('.js-message');
+      var btn = document.querySelector('.js-message-btn');
+      var card = document.querySelector('.js-profile-card');
+      var closeBtn = document.querySelectorAll('.js-message-close');
+
+      btn.addEventListener('click',function (e) {
+          e.preventDefault();
+          card.classList.add('active');
+      });
+
+      closeBtn.forEach(function (element, index) {
+        console.log(element);
+          element.addEventListener('click',function (e) {
+              e.preventDefault();
+              card.classList.remove('active');
+          });
+      });
     </script>
-</body>
+  </body>
 </html>
